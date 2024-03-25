@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Input from "./FormField";
+import Input from "./LoginField";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { FormProps, LoginValidation } from "./types";
+import { LoginProps, LoginValidation } from "./type";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 
@@ -19,9 +19,9 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormProps>({ resolver: zodResolver(LoginValidation) });
+  } = useForm<LoginProps>({ resolver: zodResolver(LoginValidation) });
 
-  const onSubmit: SubmitHandler<FormProps> = (data) => data===credentials? router.push("/src/app/dashboard"):console.log(data);
+  const onSubmit: SubmitHandler<LoginProps> = (data) => data===credentials? router.push("/dashboard"):console.log(data);
 
   return (
     <div className=" w-full h-screen bg-green-50 flex justify-center items-center">

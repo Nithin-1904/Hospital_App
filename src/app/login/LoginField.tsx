@@ -1,5 +1,5 @@
 import React from "react";
-import { FormFieldProps } from "./types";
+import { LoginFieldProps } from "./type";
 
 const FormField = ({
   type,
@@ -9,7 +9,7 @@ const FormField = ({
   register,
   error,
   design,
-}: FormFieldProps) => {
+}: LoginFieldProps) => {
   return (
     <>
       <input
