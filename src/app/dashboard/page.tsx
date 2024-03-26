@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="h-full w-full bg-green-100">
+      
         <div className=" p-2 grid grid-cols-2 h-full w-full gap-2">
           <div className="grid gap-2">
             <div className="bg-white rounded-md shadow-md box-border p-4">
@@ -26,7 +26,7 @@ const Dashboard = () => {
                 patrioque constituto. Dicant epicuri ut est, in eam ignota
                 accommodare.
               </p>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-center items-center gap-[20rem]">
                 <div className="grid gap-2">
                   <label className="text-xl"> Register a Patient </label>
                   <button onClick={register} className="bg-green-400  hover:bg-green-500 h-12 rounded-md">
@@ -64,7 +64,6 @@ const Dashboard = () => {
             <Image src="/graph.png" alt="graph" height={100} width={100} />
           </div>
         </div>
-      </div>
     </>
   );
 };

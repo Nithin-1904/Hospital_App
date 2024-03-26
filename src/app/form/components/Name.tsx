@@ -1,28 +1,25 @@
 import React from "react";
-import { InputProps } from "./type";
+import { InputFieldProps } from "./type";
 
-const Name = ({ label, design, name, register, error }: InputProps) => {
+const Name = ({ label, name, register, error }: InputFieldProps) => {
   return (
     <>
-      <div className={`${design} flex-col`}>
-        <div className="mb-2">
-          <label className="text-xl font-semibold">{label}</label>
+      <div className="items-center" >
+        <div>
+          <label className="text-xl font-medium">{label}</label>
         </div>
-        <div className={`grid grid-cols-2 gap-5 ${design}`}>
+        <div className="flex gap-5">
           <input
-            {...register(name)}
             type="text"
-            className="p-3 rounded-md border-slate-300 border-2 w-full"
-            placeholder="First Name"
+            placeholder="Firstname"
+            className="p-2 w-full rounded-md border-2 border-slate-300"
           />
-          {error && <p className="text-red-500 mb-5">{error.message}</p>}
+            {error && <p className="text-red-500 mb-5">{error.message}</p>}
           <input
-            {...register(name)}
             type="text"
-            className="p-3 rounded-md border-slate-300 border-2"
-            placeholder="Last Name"
+            placeholder="Lastname"
+            className="p-2 rounded-md border-2 w-full border-slate-300"
           />
-          {error && <p className="text-red-500 mb-5">{error.message}</p>}
         </div>
       </div>
     </>

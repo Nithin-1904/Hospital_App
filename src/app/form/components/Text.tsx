@@ -1,23 +1,28 @@
-"use client";
-import React, { ChangeEvent, useState } from "react";
-import { InputProps } from "./type";
+import React from "react";
+import { InputFieldProps } from "./type";
 
-
-const Text = ({ type, label, design,name, register,error, hint }: InputProps) => {
-
+const Text = ({
+  type,
+  label,
+  placeholder,
+  name,
+  register,
+}: InputFieldProps) => {
   return (
-    <div className={`${design} flex-col`}>
-      <div className="mb-2">
-        <label className="text-xl font-semibold">{label}</label>
+    <>
+      <div className="items-center">
+        <div>
+          <label className="text-xl font-medium">{label}</label>
+        </div>
+        <div className="flex gap-5">
+          <input
+            type={type}
+            placeholder={placeholder}
+            className="p-2 rounded-md border-2 w-full border-slate-300"
+          />
+        </div>
       </div>
-      <input
-        {...(register(name))}
-        type={type}
-        className="p-3 rounded-md border-slate-300 border-2 w-full"
-        placeholder={hint ? hint : label}
-      />
-      {error && <p className="text-red-500 mb-5">{error.message}</p>}
-    </div>
+    </>
   );
 };
 
